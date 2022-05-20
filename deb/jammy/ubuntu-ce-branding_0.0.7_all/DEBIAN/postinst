@@ -12,6 +12,8 @@ mv /usr/share/pixmaps/ubuntuce-logo-icon.png /usr/share/pixmaps/ubuntu-logo-icon
 DEFAULTS="[org.gnome.login-screen]
 logo='/usr/share/plymouth/ubuntuce-logo.png'"
 
+touch /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
+
 sed -i "/org.gnome.login-screen/d" /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
 sed -i "/ubuntuce-logo.png/d" /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
 
