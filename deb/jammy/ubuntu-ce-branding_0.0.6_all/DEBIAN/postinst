@@ -19,4 +19,7 @@ echo "$DEFAULTS" | tee -a /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+update-alternatives --install "/usr/share/plymouth/themes/default.plymouth" "default.plymouth" "/usr/share/plymouth/themes/ubuntuce/ubuntuce.plymouth" 160
+update-initramfs -uk all
+
 exit 0
