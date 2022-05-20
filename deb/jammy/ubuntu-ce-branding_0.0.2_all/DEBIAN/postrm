@@ -1,0 +1,9 @@
+#!/bin/bash
+
+mv /usr/share/pixmaps/ubuntu-logo-dark.png_bak /usr/share/pixmaps/ubuntu-logo-dark.png
+mv /usr/share/pixmaps/ubuntu-logo-icon.png_bak /usr/share/pixmaps/ubuntu-logo-icon.png
+
+sed -i "/[org.gnome.login-screen]/d" /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
+sed -i "/logo='/usr/share/plymouth/ubuntuce-logo.png'/d" /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
+
+exit 0

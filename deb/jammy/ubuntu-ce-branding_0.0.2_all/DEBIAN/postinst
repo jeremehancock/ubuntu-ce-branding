@@ -1,0 +1,19 @@
+#!/bin/bash
+
+chmod a+r /usr/share/plymouth/themes/ubuntuce/*
+chmod 644 /usr/share/plymouth/ubuntuce-logo.png
+chmod 644 /usr/share/pixmaps/ubuntuce-logo-dark.png
+chmod 644 /usr/share/pixmaps/ubuntuce-logo-icon.png
+mv /usr/share/pixmaps/ubuntu-logo-dark.png /usr/share/pixmaps/ubuntu-logo-dark.png_bak
+mv /usr/share/pixmaps/ubuntu-logo-icon.png /usr/share/pixmaps/ubuntu-logo-icon.png_bak
+mv /usr/share/pixmaps/ubuntuce-logo-dark.png /usr/share/pixmaps/ubuntu-logo-dark.png
+mv /usr/share/pixmaps/ubuntuce-logo-icon.png /usr/share/pixmaps/ubuntu-logo-icon.png
+
+DEFAULTS="[org.gnome.login-screen]
+logo='/usr/share/plymouth/ubuntuce-logo.png'"
+
+echo "$DEFAULTS" | tee /usr/share/glib-2.0/schemas/90_ubuntu-settings.gschema.override
+
+glib-compile-schemas /usr/share/glib-2.0/schemas/
+
+exit 0
