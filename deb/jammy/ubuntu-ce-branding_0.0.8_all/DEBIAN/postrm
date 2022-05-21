@@ -8,4 +8,7 @@ sed -i "/ubuntuce-logo.png/d" /usr/share/glib-2.0/schemas/90_ubuntu-settings.gsc
 
 glib-compile-schemas /usr/share/glib-2.0/schemas/
 
+update-alternatives --install '/usr/share/plymouth/themes/default.plymouth' 'default.plymouth' '/usr/share/plymouth/themes/bgrt/bgrt.plymouth' 110
+update-initramfs -uk all
+
 exit 0
